@@ -127,6 +127,8 @@ int main(int argc, char **argv) {
 			return 1;
 		}
 
+
+
 		char inst_file[1033] = {0};
 		sprintf(inst_file, "%s/instance", path);
 
@@ -149,7 +151,6 @@ int main(int argc, char **argv) {
 		const char *lcfg_json = read_file(lcfg_path);
 
 		cJSON *db = cJSON_Parse(db_json);
-		cJSON *lcfg = cJSON_Parse(lcfg_path);
 
 		if (db == NULL) { 
         	const char *error_ptr = cJSON_GetErrorPtr(); 
@@ -189,16 +190,30 @@ int main(int argc, char **argv) {
 			}
     	}
 
-		FILE *lcfg_f = fopen(lcfg_path, "w");
+		const char *lcfg_old_str = read_file(lcfg_path);
+		cJSON *lcfg = cJSON_Parse(lcfg_old_str);
 		cJSON *addons = cJSON_GetObjectItemCaseSensitive(lcfg, "addons");
-		cJSON_AddItemToArray(addons, cJSON_CreateString(argv[2]));
-		cJSON_AddItemToObject(lcfg, "addons", addons);
-		char *lcfg_str = cJSON_Print(lcfg);
-		fwrite(lcfg_str, strlen(lcfg_str), 1, lcfg_f);
-		free(lcfg_str);
-		fclose(lcfg_f);
 
-		cJSON_Delete(db);
+
+		cJSON *current_element = NULL;
+		char *current_key = NULL;
+		cJSON_ArrayForEach(current_element, addons) {
+    		current_key = current_element->valuestring;
+    		if (current_key != NULL && strcmp(current_key, argv[2]) == 0) {
+				goto end;
+    		}
+		}
+
+		cJSON_AddItemToArray(addons, cJSON_CreateString(addon->string));
+		FILE *lcfg_f = fopen(lcfg_path, "w");
+		char *lcfg_str = cJSON_Print(lcfg);
+		if (lcfg_str == NULL) printf("lcfg_str == NULL\n");
+		fwrite(lcfg_str, sizeof(char), strlen(lcfg_str), lcfg_f);
+		fclose(lcfg_f);
+		free(lcfg_str);
+	
+	end:
+		cJSON_Delete(lcfg);
 		free((void*)instance_path);
 		free((void*)db_json);
 		free((void*)lcfg_json);
