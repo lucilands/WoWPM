@@ -9,3 +9,6 @@ wpm: main.c cJSON.c bin
 
 bin:
 	mkdir -p bin
+
+install: all
+	cp bin/wpm /usr/bin/wpm
