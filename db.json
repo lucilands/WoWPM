@@ -10,5 +10,122 @@
 	"pfUI" : {
 		"url" : "https://github.com/shagu/pfUI/archive/master.zip",
 		"rename" : true
+	},
+
+	"ShaguTweaks" : {
+		"url" : "https://github.com/shagu/ShaguTweaks/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguDPS" : {
+		"url" : "https://github.com/shagu/ShaguDPS/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguPlates" : {
+		"url" : "https://github.com/shagu/ShaguPlates/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguWidget" : {
+		"url" : "https://github.com/shagu/ShaguWidget/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguGhetto" : {
+		"url" : "https://github.com/shagu/ShaguGhetto/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguBam" : {
+		"url" : "https://github.com/shagu/ShaguBam/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguBoP" : {
+		"url" : "https://github.com/shagu/ShaguBoP/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguChat" : {
+		"url" : "https://github.com/shagu/ShaguChat/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguClock" : {
+		"url" : "https://github.com/shagu/ShaguClock/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguColor" : {
+		"url" : "https://github.com/shagu/ShaguColor/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguCombat" : {
+		"url" : "https://github.com/shagu/ShaguCombat/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguCopy" : {
+		"url" : "https://github.com/shagu/ShaguCopy/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguError" : {
+		"url" : "https://github.com/shagu/ShaguError/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguInventory" : {
+		"url" : "https://github.com/shagu/ShaguInventory/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguJunk" : {
+		"url" : "https://github.com/shagu/ShaguJunk/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguKill" : {
+		"url" : "https://github.com/shagu/ShaguKill/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguMount" : {
+		"url" : "https://github.com/shagu/ShaguMount/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguNotify" : {
+		"url" : "https://github.com/shagu/ShaguNotify/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguScore" : {
+		"url" : "https://github.com/shagu/ShaguScore/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguStance" : {
+		"url" : "https://github.com/shagu/ShaguStance/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguTooltips" : {
+		"url" : "https://github.com/shagu/ShaguTooltips/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguValue" : {
+		"url" : "https://github.com/shagu/ShaguValue/archive/master.zip",
+		"rename" : true
+	},
+	"GMBlacklist" : {
+		"url" : "https://github.com/shagu/GMBlacklist/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguJWC" : {
+		"url" : "https://github.com/shagu/ShaguJWC/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguMail" : {
+		"url" : "https://github.com/shagu/ShaguMail/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguController" : {
+		"url" : "https://github.com/shagu/ShaguController/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguBoat" : {
+		"url" : "https://github.com/shagu/ShaguBoat/archive/master.zip",
+		"rename" : true
+	},
+	"ShaguScan" : {
+		"url" : "https://github.com/shagu/ShaguScan/archive/master.zip",
+		"rename" : true
+	},
+	"antispam" : {
+		"url" : "https://github.com/shagu/antispam/archive/master.zip",
+		"rename" : true
 	}
 }
