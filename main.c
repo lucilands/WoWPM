@@ -256,6 +256,34 @@ int main(int argc, char **argv) {
 		cJSON_Delete(lcfg);
 	}
 
+	if (strcmp(argv[1], "info") == 0) {
+				char inst_file[2048] = {0};
+		sprintf(inst_file, "%s/instance", path);
+
+		const char *instance_path = read_file(inst_file);
+		char lcfg_path[1024];
+		sprintf(lcfg_path, "%s/wpm.json", instance_path);
+
+		const char *lcfg_json = read_file(lcfg_path);
+
+		cJSON *lcfg = cJSON_Parse(lcfg_json);
+
+		cJSON *current_element = NULL;
+		char *current_key = NULL;
+
+		cJSON *arr = cJSON_GetObjectItemCaseSensitive(lcfg, "addons");
+
+		printf("wpa version 0.0.1\nControlled instance: %s\nInstalled plugins:\n", instance_path);
+
+		cJSON_ArrayForEach(current_element, arr) {
+    		current_key = current_element->valuestring;
+    		if (current_key != NULL) {
+        		printf("	- %s\n", current_key);
+    		}
+		}
+
+	}
+
 
 	return 0;
 }

@@ -31,3 +31,8 @@ If you want to check what addons you already have installed you can just run thi
 ```bash
 wpm installed
 ```
+
+General info can be found like this
+```bash
+wpm info
+```
