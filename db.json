@@ -159,5 +159,11 @@
 		"url" : "https://github.com/shagu/antispam/archive/master.zip",
 		"descr" : "A low-effort spam filter for turtle-wow",
 		"rename" : true
+	},
+
+	"Bagnon" : {
+		"url" : "https://cdn.wowinterface.com/downloads/file4459/Bagnon-8.1.9.zip",
+		"descr" : "Bagnon is a bag replacement addon designed to help the player find items as quickly and as easily as possible",
+		"rename" : false
 	}
 }
