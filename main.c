@@ -17,7 +17,6 @@ struct stat st = {0};
 const char *read_file(const char *path) {
   	FILE *file = fopen(path, "r");
   	if (file == NULL) {
-    	fprintf(stderr, "Expected file \"%s\" not found", path);
     	return NULL;
   	}
   	fseek(file, 0, SEEK_END);
@@ -102,6 +101,10 @@ int main(int argc, char **argv) {
 		sprintf(db_file, "%s/db.json", path);
 
 		const char *instance_path = read_file(inst_file);
+		if (instance_path == NULL) {
+			printf("Please select a WoW instanece first with wpm select\n");
+			return 1;
+		}
 		
 		char addon_path[1041] = {0};
 		sprintf(addon_path, "%s/Interface/AddOns", instance_path);
