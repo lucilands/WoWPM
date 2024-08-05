@@ -1,5 +1,11 @@
 # WoWPM - A CLI plugin manager for WoW on Linux
 
+## Installation
+Installing wpm is as easy as running this one command
+```bash
+sudo make install
+```
+
 ## Usage
 First, select an instance, this only needs to be done right after installation, or when the path to your installation changes
 ```bash
