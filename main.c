@@ -165,8 +165,9 @@ int main(int argc, char **argv) {
 
 		cJSON_ArrayForEach(current_element, db) {
     		current_key = current_element->string;
+			cJSON *descr = cJSON_GetObjectItemCaseSensitive(current_element, "descr");
     		if (current_key != NULL) {
-        		printf("%s\n", current_key);
+        		printf("%s - %s\n", current_key, descr->valuestring);
     		}
 		}
 
