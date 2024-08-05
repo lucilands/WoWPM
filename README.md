@@ -26,3 +26,8 @@ If you don't see a plugin there, it either hasn't been added yet, or it is in th
 ```bash
 wpm refresh
 ```
+
+If you want to check what addons you already have installed you can just run this command
+```bash
+wpm installed
+```

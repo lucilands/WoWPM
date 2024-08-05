@@ -7,6 +7,7 @@
 #include <string.h>
 #include <errno.h>
 #include <unistd.h>
+#include <dirent.h>
 
 #include "cJSON.h"
 
@@ -25,7 +26,7 @@ const char *read_file(const char *path) {
   	char *buffer = malloc(len + 1);
 
   	if (buffer == NULL) {
-    	fprintf(stderr, "Unable to allocate memory for file");
+    	fprintf(stderr, "Unable to allocate memory for file %s\n", path);
     	fclose(file);
     	return NULL;
   	}
@@ -79,6 +80,38 @@ int main(int argc, char **argv) {
 		FILE *cfg = fopen(inst_file, "w");
 		fwrite(argv[2], strlen(argv[2]), 1, cfg);
 		fclose(cfg);
+
+		char addon_path[1041] = {0};
+		sprintf(addon_path, "%s/Interface/AddOns", argv[2]);
+
+		char lcfg_path[1024] = {0};
+		sprintf(lcfg_path, "%s/wpm.json", argv[2]);
+
+		printf("Checking for manually installed AddOns\n");
+		cJSON *addons = cJSON_CreateArray();
+		if (addons == NULL) {return 1;}
+
+		DIR *d;
+	  	struct dirent *dir;
+	  	d = opendir(addon_path);
+	  	if (d) {
+    		while ((dir = readdir(d)) != NULL) {
+				if (dir->d_name[0] != '.') {
+					cJSON_AddItemToArray(addons, cJSON_CreateString(dir->d_name));
+				}
+    		}
+	    	closedir(d);
+  		}
+		cJSON *json = cJSON_CreateObject();
+		cJSON_AddItemToObject(json, "addons", addons);
+
+		FILE *local_cfg = fopen(lcfg_path, "w");
+		char *json_str = cJSON_Print(json);
+		fwrite(json_str, strlen(json_str), 1, local_cfg);
+		free(json_str);
+		fclose(local_cfg);
+
+		cJSON_Delete(addons);
 	}
 
 	if (strcmp(argv[1], "refresh") == 0) {
@@ -109,8 +142,14 @@ int main(int argc, char **argv) {
 		char addon_path[1041] = {0};
 		sprintf(addon_path, "%s/Interface/AddOns", instance_path);
 
+		char lcfg_path[1024] = {0};
+		sprintf(lcfg_path, "%s/wpm.json", instance_path);
+
 		const char *db_json = read_file(db_file);
+		const char *lcfg_json = read_file(lcfg_path);
+
 		cJSON *db = cJSON_Parse(db_json);
+		cJSON *lcfg = cJSON_Parse(lcfg_path);
 
 		if (db == NULL) { 
         	const char *error_ptr = cJSON_GetErrorPtr(); 
@@ -150,9 +189,19 @@ int main(int argc, char **argv) {
 			}
     	}
 
+		FILE *lcfg_f = fopen(lcfg_path, "w");
+		cJSON *addons = cJSON_GetObjectItemCaseSensitive(lcfg, "addons");
+		cJSON_AddItemToArray(addons, cJSON_CreateString(argv[2]));
+		cJSON_AddItemToObject(lcfg, "addons", addons);
+		char *lcfg_str = cJSON_Print(lcfg);
+		fwrite(lcfg_str, strlen(lcfg_str), 1, lcfg_f);
+		free(lcfg_str);
+		fclose(lcfg_f);
+
 		cJSON_Delete(db);
 		free((void*)instance_path);
 		free((void*)db_json);
+		free((void*)lcfg_json);
 	}
 
 	if (strcmp(argv[1], "list") == 0) {
@@ -177,6 +226,36 @@ int main(int argc, char **argv) {
 		free((void *)db_json);
 		cJSON_Delete(db);
 	}
+
+	if (strcmp(argv[1], "installed") == 0) {
+		char inst_file[2048] = {0};
+		sprintf(inst_file, "%s/instance", path);
+
+		const char *instance_path = read_file(inst_file);
+		char lcfg_path[1024];
+		sprintf(lcfg_path, "%s/wpm.json", instance_path);
+
+		const char *lcfg_json = read_file(lcfg_path);
+
+		cJSON *lcfg = cJSON_Parse(lcfg_json);
+
+		cJSON *current_element = NULL;
+		char *current_key = NULL;
+
+		cJSON *arr = cJSON_GetObjectItemCaseSensitive(lcfg, "addons");
+
+		cJSON_ArrayForEach(current_element, arr) {
+    		current_key = current_element->valuestring;
+    		if (current_key != NULL) {
+        		printf("%s\n", current_key);
+    		}
+		}
+
+		free((void*)instance_path);
+		free((void*)lcfg_json);
+		cJSON_Delete(lcfg);
+	}
+
 
 	return 0;
 }
