@@ -1,131 +1,163 @@
 {
 	"pfQuest" : {
 		"url" : "https://github.com/shagu/pfQuest/releases/latest/download/pfQuest-full.zip",
+		"descr" : "A lightweight quest, spawn and item database",
 		"rename" : false
 	},
 	"pfQuest-turtle" : {
 		"url" : "https://github.com/shagu/pfQuest-turtle/archive/master.zip",
+		"descr" : "Support for some TurtleWoW custom quests and units",
 		"rename" : true
 	},
 	"pfUI" : {
 		"url" : "https://github.com/shagu/pfUI/archive/master.zip",
+		"descr" : "A complete and minimal UI framework",
 		"rename" : true
 	},
 
 	"ShaguTweaks" : {
 		"url" : "https://github.com/shagu/ShaguTweaks/archive/master.zip",
+		"descr" : "Adds several QoL-Features for the default Interface",
 		"rename" : true
 	},
 	"ShaguDPS" : {
 		"url" : "https://github.com/shagu/ShaguDPS/archive/master.zip",
+		"descr" : "A small and lightweight damage meter",
 		"rename" : true
 	},
 	"ShaguPlates" : {
 		"url" : "https://github.com/shagu/ShaguPlates/archive/master.zip",
+		"descr" : "Modifies and extends the default nameplates",
 		"rename" : true
 	},
 	"ShaguWidget" : {
 		"url" : "https://github.com/shagu/ShaguWidget/archive/master.zip",
+		"descr" : "A Desktop Widget System",
 		"rename" : true
 	},
 	"ShaguGhetto" : {
 		"url" : "https://github.com/shagu/ShaguGhetto/archive/master.zip",
+		"descr" : "Automates ghetto hearth invites",
 		"rename" : true
 	},
 	"ShaguBam" : {
 		"url" : "https://github.com/shagu/ShaguBam/archive/master.zip",
+		"descr" : "BamMod alike addon",
 		"rename" : true
 	},
 	"ShaguBoP" : {
 		"url" : "https://github.com/shagu/ShaguBoP/archive/master.zip",
+		"descr" : "Auto accepts BoP loot when alone",
 		"rename" : true
 	},
 	"ShaguChat" : {
 		"url" : "https://github.com/shagu/ShaguChat/archive/master.zip",
+		"descr" : "Highlight and hide custom chat messages",
 		"rename" : true
 	},
 	"ShaguClock" : {
 		"url" : "https://github.com/shagu/ShaguClock/archive/master.zip",
+		"descr" : "Draws a simple movable clock on the screen",
 		"rename" : true
 	},
 	"ShaguColor" : {
 		"url" : "https://github.com/shagu/ShaguColor/archive/master.zip",
+		"descr" : "Allows to write colorful chat messages",
 		"rename" : true
 	},
 	"ShaguCombat" : {
 		"url" : "https://github.com/shagu/ShaguCombat/archive/master.zip",
+		"descr" : "Displays your combat state via glowing screen edges",
 		"rename" : true
 	},
 	"ShaguCopy" : {
 		"url" : "https://github.com/shagu/ShaguCopy/archive/master.zip",
+		"descr" : "Allows to copy chat messages",
 		"rename" : true
 	},
 	"ShaguError" : {
 		"url" : "https://github.com/shagu/ShaguError/archive/master.zip",
+		"descr" : "Hides error and notification message popups",
 		"rename" : true
 	},
 	"ShaguInventory" : {
 		"url" : "https://github.com/shagu/ShaguInventory/archive/master.zip",
+		"descr" : "Shows accountwide item count inside the tooltips",
 		"rename" : true
 	},
 	"ShaguJunk" : {
 		"url" : "https://github.com/shagu/ShaguJunk/archive/master.zip",
+		"descr" : "Automatically sells and destroys specified items",
 		"rename" : true
 	},
 	"ShaguKill" : {
 		"url" : "https://github.com/shagu/ShaguKill/archive/master.zip",
+		"descr" : "Displays the remaining kills till level up",
 		"rename" : true
 	},
 	"ShaguMount" : {
 		"url" : "https://github.com/shagu/ShaguMount/archive/master.zip",
+		"descr" : "Automatically unmounts the player when using an action",
 		"rename" : true
 	},
 	"ShaguNotify" : {
 		"url" : "https://github.com/shagu/ShaguNotify/archive/master.zip",
+		"descr" : "Shows achievement alike notifications for several events",
 		"rename" : true
 	},
 	"ShaguScore" : {
 		"url" : "https://github.com/shagu/ShaguScore/archive/master.zip",
+		"descr" : "Displays a gearscore alike item rating",
 		"rename" : true
 	},
 	"ShaguStance" : {
 		"url" : "https://github.com/shagu/ShaguStance/archive/master.zip",
+		"descr" : "Automatically switches to the required stance",
 		"rename" : true
 	},
 	"ShaguTooltips" : {
 		"url" : "https://github.com/shagu/ShaguTooltips/archive/master.zip",
+		"descr" : "Modifies the game tooltips",
 		"rename" : true
 	},
 	"ShaguValue" : {
 		"url" : "https://github.com/shagu/ShaguValue/archive/master.zip",
+		"descr" : "Displays item sell and buy values on tooltips",
 		"rename" : true
 	},
 	"GMBlacklist" : {
 		"url" : "https://github.com/shagu/GMBlacklist/archive/master.zip",
+		"descr" : "Helps GMs on cutting and blacklisting chat messages",
 		"rename" : true
 	},
 	"ShaguJWC" : {
 		"url" : "https://github.com/shagu/ShaguJWC/archive/master.zip",
+		"descr" : "Some Eye-candy for your JWC gambling",
 		"rename" : true
 	},
 	"ShaguMail" : {
 		"url" : "https://github.com/shagu/ShaguMail/archive/master.zip",
+		"descr" : "An experimental mail addon",
 		"rename" : true
 	},
 	"ShaguController" : {
 		"url" : "https://github.com/shagu/ShaguController/archive/master.zip",
+		"descr" : "SteamDeck optimized UI and Keybinds",
 		"rename" : true
 	},
 	"ShaguBoat" : {
 		"url" : "https://github.com/shagu/ShaguBoat/archive/master.zip",
+		"descr" : "A despawn timer for Turtle-WoW Fishing Boats",
 		"rename" : true
 	},
 	"ShaguScan" : {
 		"url" : "https://github.com/shagu/ShaguScan/archive/master.zip",
+		"descr" : "A scanner that uses SuperWoW’s API to track nearby units",
 		"rename" : true
 	},
 	"antispam" : {
 		"url" : "https://github.com/shagu/antispam/archive/master.zip",
+		"descr" : "A low-effort spam filter for turtle-wow",
 		"rename" : true
 	}
 }
