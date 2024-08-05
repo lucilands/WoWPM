@@ -1,0 +1,10 @@
+{
+	"pfQuest" : {
+		"url" : "https://github.com/shagu/pfQuest/releases/latest/download/pfQuest-full.zip",
+		"rename" : false
+	},
+	"pfQuest-turtle" : {
+		"url" : "https://github.com/shagu/pfQuest-turtle/archive/master.zip",
+		"rename" : true
+	}
+}
