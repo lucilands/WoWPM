@@ -6,5 +6,9 @@
 	"pfQuest-turtle" : {
 		"url" : "https://github.com/shagu/pfQuest-turtle/archive/master.zip",
 		"rename" : true
+	},
+	"pfUI" : {
+		"url" : "https://github.com/shagu/pfUI/archive/master.zip",
+		"rename" : true
 	}
 }
