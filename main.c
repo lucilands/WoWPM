@@ -152,5 +152,27 @@ int main(int argc, char **argv) {
 		free((void*)db_json);
 	}
 
+	if (strcmp(argv[1], "list") == 0) {
+		char db_file[1032] = {0};
+		sprintf(db_file, "%s/db.json", path);
+
+		const char *db_json = read_file(db_file);
+
+		cJSON *db = cJSON_Parse(db_json);
+
+		cJSON *current_element = NULL;
+		char *current_key = NULL;
+
+		cJSON_ArrayForEach(current_element, db) {
+    		current_key = current_element->string;
+    		if (current_key != NULL) {
+        		printf("%s\n", current_key);
+    		}
+		}
+
+		free((void *)db_json);
+		cJSON_Delete(db);
+	}
+
 	return 0;
 }
