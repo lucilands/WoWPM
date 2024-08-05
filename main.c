@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
 			return 1;
 		}
 		char cmd[2067] = {0};
-		sprintf(cmd, "cp %s/db.json %s/db.json", cwd, path);
+		sprintf(cmd, "wget -q https://raw.githubusercontent.com/TheHerowither/WoWPM/master/db.json -O %s/db.json", path);
 		printf("[CMD]: %s\n", cmd);
 		system(cmd);
 	}
@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
 
 	if (strcmp(argv[1], "refresh") == 0) {
 		char cmd[2067] = {0};
-		sprintf(cmd, "cp %s/db.json %s/db.json", cwd, path);
+		sprintf(cmd, "wget -q https://raw.githubusercontent.com/TheHerowither/WoWPM/master/db.json -O %s/db.json", path);
 		printf("[CMD]: %s\n", cmd);
 		system(cmd);
 	}
